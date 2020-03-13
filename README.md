@@ -183,5 +183,5 @@ Raw results tend to look rather satisfying to the human eye, as seen in the tabl
 
 Raw Output             |  Hayao-stylized Raw Output    |  Hayao-stylized Denoised
 :-------------------------:|:-------------------------:|:-------------------------:
-![](./src/birds.png)  |  ![](./src/Hayao_birds_noisy.png) | ![](./src/Hayao_birds_denoised.png)
+![](./src/birds.png)  |  ![](./src/Hayao_birds_noisy.jpg) | ![](./src/Hayao_birds_denoised.jpg)
 
