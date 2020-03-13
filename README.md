@@ -178,3 +178,10 @@ If you have trained a new model, the saved model can be found under `logs`, as s
        | ...
        
 ```
+
+Raw results tend to look rather satisfying to the human eye, as seen in the table below. However, SinGAN injects a lot of noise into the image. If you use only the raw result, you will obtain a rather poor stylization of the image, as seen in the second column. The final column shows the result after denoising, showing that some form of post-processing pipeline, or an active noise reduction algorithm during the training, should be used when wanting to use the output for things like data augmentation. While active noise reduction seems like it would be rather desirable, this could potentially harm the results of the model itself, as the patch distributions may not be learned as well due to such a change.
+
+Raw Output             |  Hayao-stylized Raw Output    |  Hayao-stylized Denoised
+:-------------------------:|:-------------------------:|:-------------------------:
+![](./src/birds.png)  |  ![](./src/Hayao_birds_noisy.png) | ![](./src/Hayao_birds_denoised.png)
+
