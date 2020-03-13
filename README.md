@@ -194,6 +194,4 @@ Raw Output             |  Hayao-stylized Raw Output    |  Hayao-stylized Denoise
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](./src/birds.png)  |  ![](./src/Hayao_birds_noisy.jpg) | ![](./src/Hayao_birds_denoised.jpg)
 
-The entire corpus of stylized results for the provided models can be found here:
-
 
