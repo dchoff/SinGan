@@ -87,15 +87,11 @@ pip install -r requirements.txt
 
 ### Arguments
    * gantype
-       * Loss type of GANs. You can choose among "wgangp, zerogp, lsgan". Recommend to use "zerogp".
+       * Loss type of GANs. You can choose among "wgangp, zerogp, lsgan". Recommended to use "zerogp" to reduce run variance.
    * model_name
        * Prefix of the directory of log files.
    * workers
        * Workers to use for loading dataset.
-   * batch_size
-       * Size of batch, it is fixed to "1". SinGAN uses only one image.
-   * val_batch
-       * Size of batch in validation, it is fixed to "1". SinGAN uses only one image.
    * img_size_max
        * Size of largest image. = Finest
    * img_size_min
