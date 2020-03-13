@@ -13,7 +13,7 @@ Capturing the distribution of complex datasets is a task that is still considere
 However, the model itself injects noise into the outputted image, leading to noise being propagated through systems one may want to parse the output to, such as other GANs. One potential way of resolving this is the approach we took in this repository, where we perform denoising on the outputted images prior to inputting it into other models. However, while this greatly increases the results of the output in models like CartoonGAN, there are still signs of artifacting and noise propagation that could be improved upon. 
 
 
-By manipulating the model, training it multiple times at different granularities, or fusing its outputs carefully, you can achieve the image modification results that are discussed in the official paper - however, this repository mainly focuses on the raw outputs of the model (similar to the [FriedRonaldo]() impelementation) and aims to show a potential way of allowing the results to be used for other purposes where fine-grained quality greatly matters, e.g. data augmentation.
+By manipulating the model, training it multiple times at different granularities, or fusing its outputs carefully, you can achieve the image modification results that are discussed in the official paper - however, this repository mainly focuses on the raw outputs of the model (similar to the [FriedRonaldo](https://github.com/FriedRonaldo/SinGAN) implementation) and aims to show a potential way of allowing the results to be used for other purposes where fine-grained quality greatly matters, e.g. data augmentation.
 
 
 ## Input and Output
