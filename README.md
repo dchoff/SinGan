@@ -132,6 +132,13 @@ python main.py --gpu 0 --img_to_use 0 --img_size_max 250 --gantype zerogp --vali
       python ./cartoonGAN/test.py --input_dir ./results/SinGAN_2020-03-02_20-39-53 --gpu 0 --mod_name SinGAN_2020-03-02_20-39-53
 ```
 
+## Provided Models
+One of the benefits of this model is that a trained model is rather small. We've provided several different models, which can be found [here](./code/logs). These contain snapshots of codebase at the time and a text file called `record.txt` which contains the GAN type which was used and the index of the image trained upon.
+
+Results from having run these models can be found [here](.code/results). The stylized results can be found [here](.code/test_output/results).
+
+Please note that if you wish to reobtain the results for a provided model, you should empty out the results that are already in that subdirectory, as the code will not attempt to overwrite images that are already there.
+
 ## Results
 
 By now, you have either trained your new model or have ran a pretrained model and want to see the results from it.
@@ -186,4 +193,7 @@ As seen, there is room for further improvements before the output of SinGAN is c
 Raw Output             |  Hayao-stylized Raw Output    |  Hayao-stylized Denoised
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](./src/birds.png)  |  ![](./src/Hayao_birds_noisy.jpg) | ![](./src/Hayao_birds_denoised.jpg)
+
+The entire corpus of stylized results for the provided models can be found here:
+
 
