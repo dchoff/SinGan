@@ -135,9 +135,9 @@ python main.py --gpu 0 --img_to_use 0 --img_size_max 250 --gantype zerogp --vali
 ## Provided Models
 One of the benefits of this model is that a trained model is rather small. We've provided several different models, which can be found [here](./code/logs). These contain snapshots of codebase at the time and a text file called `record.txt` which contains the GAN type which was used and the index of the image trained upon.
 
-Results from having run these models can be found [here](.code/results). The stylized results can be found [here](.code/test_output/results).
+Results from having run these models can be found [here](.code/results). The stylized results can be found [here](.code/test_output/results). The pre-trained models for CartoonGAN can similarly be found [here](.code/cartoonGAN/pretrained_model).
 
-Please note that if you wish to reobtain the results for a provided model, you should empty out the results that are already in that subdirectory, as the code will not attempt to overwrite images that are already there.
+Please note that if you wish to reobtain the results for a provided model, you should empty out the results that are already in that model's results directory, as the code will not attempt to overwrite images that are already there.
 
 ## Results
 
