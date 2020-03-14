@@ -15,6 +15,14 @@ However, the model itself injects noise into the outputted image, leading to noi
 
 By manipulating the model, training it multiple times at different granularities, or fusing its outputs carefully, you can achieve the image modification results that are discussed in the official paper - however, this repository mainly focuses on the raw outputs of the model (similar to the [FriedRonaldo](https://github.com/FriedRonaldo/SinGAN) implementation) and aims to show a potential way of allowing the results to be used for other purposes where fine-grained quality greatly matters, e.g. data augmentation.
 
+## General Deliverables
+All of these can be found within the repo itself, but for sake of clarity as to where they are, see the following:
+* [Example raw outputs](./code/results)
+* [Example stylized outputs](./code/test_output/results)
+* [Trained example SinGAN models](./code/logs)
+* [Pre-trained CartoonGAN models](./code/cartoonGAN/pretrained_model)
+* [Docker image](https://hub.docker.com/r/dchoff/singan)
+* [Dockerfile](./Dockerfile)
 
 ## Input and Output
 The input for our model is arbitrary sized images. To try and replicate the results of the paper, and to obtain better consistency, we trained and ran models that were trained on images from the official dataset used the authors of SinGAN. These input images were primarily PNG files, and typically had a resolution near 250x250.
