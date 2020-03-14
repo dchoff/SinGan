@@ -182,7 +182,7 @@ One of the benefits of this model is that a trained model is rather small. We've
 
 Results from having run these models can be found [here](./code/results). The stylized results can be found [here](./code/test_output/results). The pre-trained models for CartoonGAN can similarly be found [here](./code/cartoonGAN/pretrained_model).
 
-Please note that if you wish to reobtain the results for a provided model, you should empty out the results that are already in that model's results directory, as the code will not attempt to overwrite images that are already there.
+Please note that if you wish to reobtain the results for a provided model, you should empty out the results that are already in that model's results directory, as the code will not attempt to overwrite images that are already there. Additionally, the outputted generated images are in the format GEN_x_y.png (or GEN_x_y.jpg if stylized), where x refers to the current scale and y refers to the current iteration in that scale. Thus, higher x's are demonstrable of the final results of the models (e.g. GEN_8_43.png), while y is indicative of more variability.
 
 ## Results
 
