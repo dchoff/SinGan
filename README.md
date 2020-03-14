@@ -63,6 +63,51 @@ The model outputs two things: the raw output of the SinGAN model, and stylized i
        
   ```
    
+## How to Run via Docker
+
+### Build Dockerfile
+The Dockerfile can be found [here](./Dockerfile), and built using the following command:
+```
+docker build -t singan .
+```
+
+Alternatively, it is also pushed to [docker hub](https://hub.docker.com/r/dchoff/singan).
+
+Note that as the repository requires GPU access, nvidia-docker should be installed for proper usage, and it does not support Windows/Mac native machines. If you are running a non-Linux machine, I recommend you refer to the "How to Run via Code" section below, which should be relatively simple to setup.
+
+Note that the instructions below *may* not work, as I don't have access to a Linux machine and thus was not able to get Docker running with GPU access.
+
+If you are on a Linux machine, and still wish to use Docker, then you should make sure that nvidia-docker is installed, as described on their official page [here](https://github.com/NVIDIA/nvidia-docker). Once this is done, you'll want to assign the docker a single GPU and use the image for testing, e.g.:
+```
+docker run --gpus 1 -ti --name sg dchoff/singan
+```
+
+Which will assign the container a single gpu and put you in an interactive shell mode. You should then be able to run the code using the following commands:
+```
+conda activate singan
+cd SinGan/code/
+python main.py --gpu 0 --img_to_use 0 --img_size_max 250 --gantype zerogp --validation --load_model SinGAN_2020-03-02_20-39-53
+```
+
+which will activate the singan environment which has the relevant dependencies, navigate you to the code directory of this repo, and then run the code (as described in the section below on How to run via Code).
+
+Once you're done running the code, exit the interactive shell and use the following command to get the container ID:
+```
+> docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                     PORTS               NAMES
+a9e23438b1a0        dchoff/singan      "/bin/bash"         About a minute ago   Exited (0) 3 seconds ago 
+```
+
+You'll then want to use `docker cp` to copy the output images to wherever you're able to open and view them. For pulling both the raw and stylized outputs of a session, e.g. SinGAN_2020-03-02_20-39-53, you would use the following:
+```
+docker cp a9e23438b1a0:/SinGan/code/results/SinGAN_2020-03-02_20-39-53 ./SinGAN_2020-03-02_20-39-53
+docker cp a9e23438b1a0:/SinGan/code/test_output/results/SinGAN_2020-03-02_20-39-53 ./SinGAN_2020-03-02_20-39-53/stylized
+
+```
+
+You should now have the images in an accessible location where you can review the results.
+
+
 ## How to Run via Code
 ### Conda Environment
 #### 1. Install Conda if not already installed
@@ -120,16 +165,16 @@ python main.py --gpu 0 --img_to_use 0 --img_size_max 250 --gantype wgangp
 ```
 
 
-### Test trained model, e.g. SinGAN_2020-03-13_12-04-40
+### Test trained model, e.g. SinGAN_2020-03-02_20-39-53
 Note that when using this option, you should take care to choose the `img_to_use` flag to be the indexed photo of the photo in `trainData` unless you desire to input a custom image into the model purposes other than generating variations of the training image. If you are unsure what image it was trained on, you can check the log folder for the `record.txt` file, which will specify whih IMGTOUSE was chosen. So long as files have not been moved around in the trainPhoto and testPhoto folders, this should be the proper index to use.
 ```
-python main.py --gpu 0 --img_to_use 0 --img_size_max 250 --gantype zerogp --validation --load_model SinGAN_2020-03-13_12-04-40
+python main.py --gpu 0 --img_to_use 0 --img_size_max 250 --gantype zerogp --validation --load_model SinGAN_2020-03-02_20-39-53
 ```
 
 
-### Manually run CartoonGAN on a trained model's results, e.g. SinGAN_2020-03-13_12-04-40
+### Manually run CartoonGAN on a trained model's results, e.g. SinGAN_2020-03-02_20-39-53
 ```
-      python ./cartoonGAN/test.py --input_dir ./results/SinGAN_2020-03-02_20-39-53 --gpu 0 --mod_name SinGAN_2020-03-02_20-39-53
+python ./cartoonGAN/test.py --input_dir ./results/SinGAN_2020-03-02_20-39-53 --gpu 0 --mod_name SinGAN_2020-03-02_20-39-53
 ```
 
 ## Provided Models
