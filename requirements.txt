@@ -34,7 +34,7 @@ scipy==1.4.1
 six==1.14.0
 tb-nightly==1.14.0a20190301
 tensorboard==2.1.0
-tensorflow==2.1.0
+tensorflow==2.7.2
 tensorflow-estimator==2.1.0
 tensorflow-estimator-2-0-preview==2.0.0
 tensorflow-gpu==2.0.0a0
